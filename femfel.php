@@ -4,12 +4,12 @@
 $conn = mysqli_connect("localhost", "root", "root", "ettTest");
 
 
-$pass = $_POST['password'];
-$user = $_POST['user'];
+$pass = $_GET['password'];
+$user = $_GET['user'];
 
 
 
-mysqli_query($conn,  "INSERT INTO userTable (username, password  ) VALUES ( $pass, $user  )");
+mysqli_query($conn,  "INSERT INTO userTable (username, password  ) VALUES ( '$pass', '$user'  )");
 
 
 mysqli_close($conn);
